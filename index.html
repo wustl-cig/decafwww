@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta http-equiv="refresh" content="3"> -->
+    <meta name="description"
+        content="Recovery of Continuous 3D Refractive Index Maps from Discrete Intensity-Only Measurements using Neural Fields">
+    <meta name="author" content="Renhao Liu*,
+                                Yu Sun*,
+                                Jiabei Zhu,
+                                Lei Tian,
+                                Ulugbek S. Kamilov">
+
+    <title>Recovery of Continuous 3D Refractive Index Maps from Discrete Intensity-Only Measurements using Neural
+        Fields</title>
+    <!-- Bootstrap core CSS -->
+    <!--link href="bootstrap.min.css" rel="stylesheet"-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="offcanvas.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="src/css/style.css">
+</head>
+
+<body>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container"></div>
+        <h2>Recovery of Continuous 3D Refractive Index Maps from Discrete Intensity-Only Measurements using Neural
+            Fields</h2>
+        <p class="abstract">The <b>FIRST</b> Neural Field method for Intensity Diffraction Tomography.</p>
+        <hr>
+        <p class="authors">
+            <a href="">Renhao Liu*</a>,
+            <a href="https://sunyumark.github.io/"> Yu Sun*</a>,
+            <a href="">Jiabei Zhu</a>,
+            <a href="https://www.bu.edu/eng/profile/lei-tian/">Lei Tian</a>,
+            <a href="https://engineering.wustl.edu/faculty/Ulugbek-Kamilov.html"> Ulugbek S. Kamilov</a> </br>
+            <b><a href="https://cigroup.wustl.edu/"> Computational Imaging Group (CIG)</a></b>
+        </p>
+
+        <div class="btn-group" role="group" aria-label="Top menu">
+            <a class="btn btn-primary" href="https://arxiv.org/abs/2112.00002">Preprint</a>
+            <!-- <a class="btn btn-primary" href="https://www.youtube.com/watch?v=o0cMvpPYHZQ">Video</a> -->
+            <a class="btn btn-primary" href="https://github.com/wustl-cig/DeCAF">Code</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <div class="vcontainer">
+	    <iframe class="video" src="https://www.youtube.com/embed/hiU0tGUBft0"
+		 title="YouTube video player" frameborder="0" 
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+	    </iframe>
+            </div>
+            <br>
+            <h2>Abstract</h2>
+            <hr>
+            <p>
+                Intensity diffraction tomography (IDT) refers to a class of optical microscopy techniques for imaging
+                the 3D refractive index (RI) distribution of a sample from a set of 2D intensity-only measurements. The
+                reconstruction of artifact-free RI maps is a fundamental challenge in IDT due to the loss of phase
+                information and the missing cone problem. Neural fields (NF) has recently emerged as a new deep learning
+                (DL) approach for learning continuous representations of physical fields. NF uses a coordinate-based
+                neural network to represent the field by mapping the spatial coordinates to the corresponding physical
+                quantities, in our case the complex-valued refractive index values. We present
+                <em><strong>DeCAF</strong></em> as the first NF-based IDT method that can learn a high-quality
+                continuous representation of a RI volume from its
+                intensity-only and limited-angle measurements. The representation in DeCAF is learned directly from the
+                measurements of the test sample by using the IDT forward model, without any ground-truth RI maps. We
+                qualitatively and quantitatively evaluate DeCAF on the simulated and experimental biological samples.
+                Our results show that DeCAF can generate high-contrast and artifact-free RI maps and lead to up to
+                2.1&#10005; reduction in MSE over existing methods.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Model</h2>
+            <hr>
+            <div class="row align-items-center">
+                <div class="col justify-content-center text-center">
+                    <img style="width:100%" src="img/scheme.png">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Experimental Results</h2>
+            <hr>
+            <div class=" align-items-center">
+                <h3>Spirogyra</h3>
+                <br>
+                <div class="col justify-content-center text-center">
+                    <img src="img/picture/algae-min.png" style="width:100%" alt="Banner">
+                </div>
+            </div>
+
+            <div class=" align-items-center">
+                <h3>Human buccal epithelial cells</h3>
+                    <div class="col justify-content-center text-center">
+                        <img src="img/picture/cheek_cell-min.png" style="width:100%" alt="Banner">
+                    </div>
+            </div>
+
+            <div class=" align-items-center">
+                <h3>Caenorhabditis elegans</h3>
+                <div class="col justify-content-center text-center">
+                    <img src="img/picture/celegans-min.png" style="width:100%" alt="Banner">
+                </div>
+            </div>
+
+            <div class=" align-items-center">
+                <h3>Granulocyte phantom (simulated)</h3>
+                <div class="col justify-content-center text-center">
+                    <img src="img/picture/simulation_cyto-min.png" style="width:100%" alt="Fig2">
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="section">
+            <h2>Paper</h2>
+            <hr>
+            <div>
+                <div class="list-group">
+                    <a href="https://arxiv.org/abs/2203.00137" class="list-group-item">
+                        <img src="img/paper_thumbnail.png" style="width:100%; margin-right:-20px; margin-top:-10px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Bibtex</h2>
+            <hr>
+            <div class="bibtexsection">
+                @misc{shangguan2022learning,
+                title={Learning Cross-Video Neural Representations
+                for High-Quality Frame Interpolation},
+                author={Wentao Shangguan and Yu Sun and Weijie Gan and Ulugbek S. Kamilov},
+                year={2022},
+                eprint={2203.00137},
+                archivePrefix={arXiv},
+                primaryClass={eess.IV}
+                }
+            </div>
+        </div> -->
+
+        <hr>
+
+        <footer>
+            <p>Acknoledgement: Web template from <a href="https://www.vincentsitzmann.com/siren/">SIREN</a></p>
+        </footer>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
